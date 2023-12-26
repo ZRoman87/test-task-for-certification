@@ -6,7 +6,6 @@ import com.gridnine.testing.FlightBuilder;
 import com.gridnine.util.CompareOperator;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
