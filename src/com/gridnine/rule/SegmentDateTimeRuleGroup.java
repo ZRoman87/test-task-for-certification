@@ -129,7 +129,7 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     @Override
     public List<Flight> doNotEqualsFiltration(List<Flight> flights, LocalDateTime dateTime) {
         List<Flight> result = new ArrayList<>();
-        List<String> segments = new ArrayList<>();
+        List<String> segments;
 
         for (Flight fl: flights
         ) {

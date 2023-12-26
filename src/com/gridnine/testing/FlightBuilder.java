@@ -1,7 +1,5 @@
 package com.gridnine.testing;
 
-import com.gridnine.testing.Segment;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;

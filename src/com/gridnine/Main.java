@@ -18,7 +18,7 @@ public class Main {
 
         Filter filter = new Filter();
 
-        List<Flight> filteredFlights = new ArrayList<>();
+        List<Flight> filteredFlights;
 
 
         // Исключить вылеты до текущего момента времени
