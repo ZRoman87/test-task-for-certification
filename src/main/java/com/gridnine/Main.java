@@ -40,17 +40,18 @@ public class Main {
 
         //--------------------------------------------------------------------------------------------------------------------------------------
 
-        /*
-        System.out.println("flights.get(0) = \n" + flights.get(0));
-        System.out.println("flights.get(1) = \n" + flights.get(1));
-        System.out.println("flights.get(2) = \n" + flights.get(2));
-        System.out.println("flights.get(3) = \n" + flights.get(3));
-        System.out.println("flights.get(4) = \n" + flights.get(4));
-        System.out.println("flights.get(5) = \n" + flights.get(5));
+
+        System.out.println("flights.get(0) = " + flights.get(0));
+        System.out.println("flights.get(1) = " + flights.get(1));
+        System.out.println("flights.get(2) = " + flights.get(2));
+        System.out.println("flights.get(3) = " + flights.get(3));
+        System.out.println("flights.get(4) = " + flights.get(4));
+        System.out.println("flights.get(5) = " + flights.get(5));
+        System.out.println("flights.get(6) = " + flights.get(6));
 
         System.out.println("flights = \n" + flights);
 
-
+/*
         System.out.println("--- ArrivalDateFiltration ---");
         LocalDateTime time = LocalDateTime.now().plusDays(3).plusHours(6).truncatedTo(MINUTES);
         System.out.println("time = " + time);

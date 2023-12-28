@@ -1,5 +1,6 @@
-package com.gridnine.rule;
+package com.gridnine.rule.impl;
 
+import com.gridnine.rule.DateTimeRuleGroup;
 import com.gridnine.testing.Flight;
 
 import java.time.LocalDateTime;

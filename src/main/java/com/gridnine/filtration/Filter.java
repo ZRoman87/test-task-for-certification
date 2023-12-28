@@ -1,5 +1,9 @@
 package com.gridnine.filtration;
 import com.gridnine.rule.*;
+import com.gridnine.rule.impl.ArrivalDateTimeRuleGroup;
+import com.gridnine.rule.impl.DepartureDateTimeRuleGroup;
+import com.gridnine.rule.impl.OnGroundDurationRuleGroup;
+import com.gridnine.rule.impl.SegmentDateTimeRuleGroup;
 import com.gridnine.testing.Flight;
 import com.gridnine.util.CompareOperator;
 
@@ -26,8 +30,8 @@ public class Filter {
 
     public List<Flight> doSegmentDateFiltration(List<Flight> flights, CompareOperator comparator){
 
-        DateTimeRuleGroup dateTimeRuleGroup = new SegmentDateTimeRuleGroup();
-        return doFiltration(flights, dateTimeRuleGroup, comparator);
+        SegmentRuleGroup segmentRuleGroup = new SegmentDateTimeRuleGroup();
+        return doFiltration(flights, segmentRuleGroup, comparator);
 
     }
 
@@ -64,28 +68,28 @@ private static List<Flight>  doFiltration(List<Flight> flights, DateTimeRuleGrou
     }
     return result;
 }
-    private static List<Flight>  doFiltration(List<Flight> flights, DateTimeRuleGroup dateTimeRuleGroup, CompareOperator comparator){
+    private static List<Flight>  doFiltration(List<Flight> flights, SegmentRuleGroup segmentRuleGroup, CompareOperator comparator){
 
         List<Flight> result = new ArrayList<>();
 
         switch (comparator) {
             case EQUALS:
-                result = dateTimeRuleGroup.doEqualsFiltration(flights, null);
+                result = segmentRuleGroup.doEqualsFiltration(flights);
                 break;
             case GREATER:
-                result = dateTimeRuleGroup.doGreaterFiltration(flights, null);
+                result = segmentRuleGroup.doGreaterFiltration(flights);
                 break;
             case GREATER_OR_EQUALS:
-                result = dateTimeRuleGroup.doGreaterFiltration(flights, null);
+                result = segmentRuleGroup.doGreaterFiltration(flights);
                 break;
             case LESS:
-                result = dateTimeRuleGroup.doLessFiltration(flights, null);
+                result = segmentRuleGroup.doLessFiltration(flights);
                 break;
             case LESS_OR_EQUALS:
-                result = dateTimeRuleGroup.doLessFiltration(flights, null);
+                result = segmentRuleGroup.doLessFiltration(flights);
                 break;
             case NOT_EQUALS:
-                result = dateTimeRuleGroup.doNotEqualsFiltration(flights,null);
+                result = segmentRuleGroup.doNotEqualsFiltration(flights);
                 break;
         }
         return result;

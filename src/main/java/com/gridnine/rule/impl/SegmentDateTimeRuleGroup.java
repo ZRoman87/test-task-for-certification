@@ -1,5 +1,6 @@
-package com.gridnine.rule;
+package com.gridnine.rule.impl;
 
+import com.gridnine.rule.SegmentRuleGroup;
 import com.gridnine.testing.Flight;
 
 import java.time.LocalDateTime;
@@ -7,21 +8,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
+public class SegmentDateTimeRuleGroup implements SegmentRuleGroup {
 
 
     @Override
-    public List<Flight> doEqualsFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doEqualsFiltration(List<Flight> flights) {
 
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
-                 ) {
+            for (String s : segments
+            ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
 
@@ -35,15 +36,15 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     }
 
     @Override
-    public List<Flight> doGreaterFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doGreaterFiltration(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
+            for (String s : segments
             ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
@@ -58,15 +59,15 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     }
 
     @Override
-    public List<Flight> doGreaterOrEqualsFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doGreaterOrEqualsFiltration(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
+            for (String s : segments
             ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
@@ -81,15 +82,15 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     }
 
     @Override
-    public List<Flight> doLessFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doLessFiltration(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
+            for (String s : segments
             ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
@@ -104,15 +105,15 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     }
 
     @Override
-    public List<Flight> doLessOrEqualsFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doLessOrEqualsFiltration(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
+            for (String s : segments
             ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
@@ -127,15 +128,15 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
     }
 
     @Override
-    public List<Flight> doNotEqualsFiltration(List<Flight> flights, LocalDateTime dateTime) {
+    public List<Flight> doNotEqualsFiltration(List<Flight> flights) {
         List<Flight> result = new ArrayList<>();
         List<String> segments;
 
-        for (Flight fl: flights
+        for (Flight fl : flights
         ) {
             segments = getSegmentsFromFlight(fl.toString());
 
-            for (String s: segments
+            for (String s : segments
             ) {
                 LocalDateTime SegmentDepartureDateTime = getSegmentDepartureDateTime(s);
                 LocalDateTime SegmentArrivalDateTime = getSegmentArrivalDateTime(s);
@@ -149,17 +150,16 @@ public class SegmentDateTimeRuleGroup implements DateTimeRuleGroup {
         return result;
     }
 
-    private static LocalDateTime getSegmentArrivalDateTime(String string){
-        return LocalDateTime.parse(string.substring(string.length()-17,string.length()-1));
+    private static LocalDateTime getSegmentArrivalDateTime(String string) {
+        return LocalDateTime.parse(string.substring(string.length() - 17, string.length() - 1));
     }
 
-    private static LocalDateTime getSegmentDepartureDateTime(String string){
-        return LocalDateTime.parse(string.substring(1,17));
+    private static LocalDateTime getSegmentDepartureDateTime(String string) {
+        return LocalDateTime.parse(string.substring(1, 17));
     }
 
-    private static List<String> getSegmentsFromFlight(String string){
+    private static List<String> getSegmentsFromFlight(String string) {
         return Arrays.asList(string.split(" ", -1));
     }
-
-
 }
+
