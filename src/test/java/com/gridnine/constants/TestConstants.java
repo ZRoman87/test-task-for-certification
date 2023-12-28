@@ -13,7 +13,7 @@ public class TestConstants {
     public static final LocalDateTime DATE_TIME_3_DAYS_FROM_NOW = LocalDateTime.now().plusDays(3).truncatedTo(MINUTES);
     public static final int ON_GROUND_DURATION_1_HOUR = 1;
     public final static List<Flight> FLIGHT_LIST = FlightBuilder.createFlights();
-    public static final Flight FLIGHT_0_DEP_EQUALS_ARR = FLIGHT_LIST.get(0);;
+    public static final Flight FLIGHT_0_DEP_EQUALS_ARR = FLIGHT_LIST.get(0);
     public static final Flight FLIGHT_1_FLIGHT_2H = FLIGHT_LIST.get(1);
     public static final Flight FLIGHT_2_FLIGHT_2H_1HGROUND_2H = FLIGHT_LIST.get(2);
     public static final Flight FLIGHT_3_DEP_IN_PAST = FLIGHT_LIST.get(3);
