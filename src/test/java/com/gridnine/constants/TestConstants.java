@@ -11,8 +11,6 @@ import static java.time.temporal.ChronoUnit.MINUTES;
 public class TestConstants {
 
     public static final LocalDateTime DATE_TIME_3_DAYS_FROM_NOW = LocalDateTime.now().plusDays(3).truncatedTo(MINUTES);
-    public static final LocalDateTime DATE_TIME_2_DAYS_FROM_NOW = LocalDateTime.now().plusDays(2).truncatedTo(MINUTES);
-    public static final LocalDateTime DATE_TIME_NOW = LocalDateTime.now().truncatedTo(MINUTES);
     public static final int ON_GROUND_DURATION_1_HOUR = 1;
     public final static List<Flight> FLIGHT_LIST = FlightBuilder.createFlights();
     public static final Flight FLIGHT_0_DEP_EQUALS_ARR = FLIGHT_LIST.get(0);;

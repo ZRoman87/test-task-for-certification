@@ -2,7 +2,6 @@ package com.gridnine.rule;
 
 import com.gridnine.testing.Flight;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface SegmentRuleGroup {
